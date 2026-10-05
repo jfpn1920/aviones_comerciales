@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aviones comerciales</title>
+    <link rel="stylesheet" href="aviones_comerciales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="aviones_comerciales.js" defer></script>
+</head>
+<body>
+    <!---------------------------------------->
+    <!--|estructuracion_aviones_comerciales|-->
+    <!---------------------------------------->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <g id="avion">
+                <!-- Cola -->
+                <path d="M20 24 L8 4 L26 4 L48 24Z" fill="currentColor"/>
+                <!-- Ala -->
+                <path d="M90 36 L120 57 L134 57 L118 36Z" fill="currentColor" opacity="0.7"/>
+                <!-- Motor -->
+                <ellipse cx="116" cy="47" rx="10" ry="4.5" fill="currentColor"/>
+                <!-- Fuselaje (cuerpo del avión) -->
+                <path d="M10 30 Q10 22 30 22 L170 22 Q195 24 198 30 Q195 36 170 38 L30 38 Q10 38 10 30Z" fill="currentColor"/>
+                <!-- Ventanillas: línea punteada blanca -->
+                <line x1="40" y1="29" x2="180" y2="29" stroke="#fff" stroke-width="3" stroke-dasharray="3 5"/>
+            </g>
+        </defs>
+    </svg>
+    <!-- Contenedor principal de la aplicación -->
+    <main class="app">
+        <!-- ENCABEZADO: título y descripción -->
+        <header class="encabezado">
+            <h1>Aviones Comerciales</h1>
+            <p>Tres tipos de aviones. Marca tus favoritos y escribe una nota en cada uno.</p>
+        </header>
+        <!-- FILTROS: mostrar todos o solo los favoritos -->
+        <nav class="filtros">
+            <button class="filtro" data-filtro="todos">Todos</button>
+            <button class="filtro" data-filtro="favoritos">
+                Favoritos (<span id="contador">0</span>)
+            </button>
+        </nav>
+        <!-- Mensaje que aparece cuando no hay favoritos -->
+        <p id="vacio" class="vacio" hidden>Aún no tienes aviones favoritos.</p>
+        <!-- GALERÍA: contiene las tres tarjetas -->
+        <section class="galeria">
+            <!-- TARJETA 1: avión regional (el más pequeño) -->
+            <article class="tarjeta" data-id="regional">
+                <div class="cielo">
+                    <svg class="avion tamano-1" viewBox="0 0 200 60"><use href="#avion"/></svg>
+                </div>
+                <div class="contenido">
+                    <h2>Jet regional</h2>
+                    <p class="modelo">Ejemplo: Embraer E190</p>
+                    <p>Unos 100 pasajeros. Ideal para rutas cortas y aeropuertos pequeños.</p>
+                    <button class="btn-fav" data-fav>Marcar favorito</button>
+                    <label for="nota-regional">Mi nota</label>
+                    <textarea id="nota-regional" rows="2" placeholder="Escribe algo..."></textarea>
+                </div>
+            </article>
+            <!-- TARJETA 2: avión de pasillo único (tamaño mediano) -->
+            <article class="tarjeta" data-id="pasillo-unico">
+                <div class="cielo">
+                    <svg class="avion tamano-2" viewBox="0 0 200 60"><use href="#avion"/></svg>
+                </div>
+                <div class="contenido">
+                    <h2>Pasillo único</h2>
+                    <p class="modelo">Ejemplo: Airbus A320</p>
+                    <p>Entre 150 y 190 pasajeros. El más común en vuelos nacionales.</p>
+                    <button class="btn-fav" data-fav>Marcar favorito</button>
+                    <label for="nota-pasillo-unico">Mi nota</label>
+                    <textarea id="nota-pasillo-unico" rows="2" placeholder="Escribe algo..."></textarea>
+                </div>
+            </article>
+            <!-- TARJETA 3: avión de fuselaje ancho (el más grande) -->
+            <article class="tarjeta" data-id="fuselaje-ancho">
+                <div class="cielo">
+                    <svg class="avion tamano-3" viewBox="0 0 200 60"><use href="#avion"/></svg>
+                </div>
+                <div class="contenido">
+                    <h2>Fuselaje ancho</h2>
+                    <p class="modelo">Ejemplo: Boeing 787</p>
+                    <p>Más de 240 pasajeros. Hecho para vuelos intercontinentales.</p>
+                    <button class="btn-fav" data-fav>Marcar favorito</button>
+                    <label for="nota-fuselaje-ancho">Mi nota</label>
+                    <textarea id="nota-fuselaje-ancho" rows="2" placeholder="Escribe algo..."></textarea>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

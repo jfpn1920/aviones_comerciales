@@ -1,0 +1,140 @@
+:root {
+  --fondo: #f3f6f9;        /* fondo de la página */
+  --tarjeta: #ffffff;      /* fondo de las tarjetas */
+  --azul: #14304d;         /* color principal: textos y aviones */
+  --texto-suave: #5a6b7c;  /* textos secundarios */
+  --cielo: #d8e9f6;        /* fondo celeste detrás del avión */
+  --acento: #e2562b;       /* naranja para favoritos y filtro activo */
+  --borde: #d3dce5;        /* color de los bordes */
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;  /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--azul);
+    line-height: 1.5;
+    padding: 24px 16px;
+}
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    margin-bottom: 20px;
+}
+.encabezado h1 {
+    font-size: 2rem;
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+/* ===== FILTROS ===== */
+.filtros {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.filtro {
+    padding: 8px 16px;
+    background: var(--tarjeta);
+    color: var(--azul);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+/* Filtro seleccionado (JavaScript le agrega la clase "activo") */
+.filtro.activo {
+    background: var(--azul);
+    color: #fff;
+    border-color: var(--azul);
+}
+/* ===== GALERÍA ===== */
+.galeria {
+    display: grid;
+    /* columnas automáticas: se acomodan según el ancho disponible */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+/* ===== TARJETAS ===== */
+.tarjeta {
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    overflow: hidden;           /* recorta el celeste en las esquinas */
+}
+/* Caja celeste donde se dibuja el avión */
+.cielo {
+    background: var(--cielo);
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avion {
+    color: var(--azul);         /* el avión toma este color (currentColor) */
+}
+/* Tres tamaños: se nota la diferencia entre tipos de avión */
+.tamano-1 { width: 50%; }
+.tamano-2 { width: 70%; }
+.tamano-3 { width: 92%; }
+.contenido {
+    padding: 16px;
+}
+.contenido h2 {
+    font-size: 1.2rem;
+}
+.modelo {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+/* ===== BOTÓN FAVORITO ===== */
+.btn-fav {
+    margin: 12px 0;
+    padding: 8px 14px;
+    background: none;
+    color: var(--acento);
+    border: 1px solid var(--acento);
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* Tarjeta marcada como favorita (clase agregada con JavaScript) */
+.tarjeta.favorita {
+    border-color: var(--acento);
+    box-shadow: 0 0 0 2px var(--acento);
+}
+.tarjeta.favorita .btn-fav {
+    background: var(--acento);
+    color: #fff;
+}
+/* ===== NOTAS ===== */
+label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-family: inherit;
+    resize: vertical;
+}
+textarea:focus {
+    outline: 2px solid var(--azul);
+}
+.vacio {
+    color: var(--texto-suave);
+    margin-bottom: 16px;
+}
