@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --fondo: #f3f6f9;
+    --tarjeta: #ffffff;
+    --azul: #14304d;
+    --texto-suave: #5a6b7c;
+    --cielo: #d8e9f6;
+    --acento: #e2562b;
+    --borde: #d3dce5;
+}
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--azul);
+    line-height: 1.5;
+    padding: 24px 16px;
+}
+/*--------------------------------*/
+/*--|estilo_aviones_comerciales|--*/
+/*--------------------------------*/
+.app {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.encabezado {
+    margin-bottom: 24px;
+    text-align: center;
+}
+.encabezado h1 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+/*-------------------------------*/
+/*--|estilo_filtros_de_aviones|--*/
+/*-------------------------------*/
+.filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+.filtro {
+    padding: 10px 18px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: var(--tarjeta);
+    color: var(--azul);
+    font: inherit;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.filtro:hover {
+    border-color: var(--acento);
+}
+.filtro.activo {
+    border-color: var(--azul);
+    background: var(--azul);
+    color: #ffffff;
+}
+/*-------------------------------*/
+/*--|estilo_galeria_de_aviones|--*/
+/*-------------------------------*/
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+.tarjeta {
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: var(--tarjeta);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.tarjeta.favorita {
+    border-color: var(--acento);
+    box-shadow: 0 0 0 2px rgb(226 86 43 / 12%);
+}
+/*----------------------------------*/
+/*--|estilo_ilustracion_del_avion|--*/
+/*----------------------------------*/
+.cielo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    padding: 16px;
+    background: var(--cielo);
+}
+.avion {
+    height: auto;
+    color: var(--azul);
+}
+.tamano-1 {
+    width: 50%;
+}
+.tamano-2 {
+    width: 70%;
+}
+.tamano-3 {
+    width: 92%;
+}
+/*----------------------------------*/
+/*--|estilo_contenido_de_tarjetas|--*/
+/*----------------------------------*/
+.contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px;
+}
+.contenido h2 {
+    font-size: 1.25rem;
+}
+.modelo {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+/*-------------------------------*/
+/*--|estilo_boton_de_favoritos|--*/
+/*-------------------------------*/
+.btn-fav {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--azul);
+    border-radius: 8px;
+    background: var(--azul);
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-fav:hover {
+    background: #244b70;
+}
+.tarjeta.favorita .btn-fav {
+    border-color: var(--acento);
+    background: var(--acento);
+}
+/*----------------------------*/
+/*--|estilo_campos_de_notas|--*/
+/*----------------------------*/
+.contenido label {
+    margin-top: 4px;
+    font-weight: bold;
+}
+textarea {
+    width: 100%;
+    min-height: 64px;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--azul);
+    font: inherit;
+    resize: vertical;
+}
+textarea:focus {
+    outline: 2px solid var(--cielo);
+    border-color: var(--azul);
+}
+.vacio {
+    margin-bottom: 20px;
+    color: var(--texto-suave);
+    text-align: center;
+}
